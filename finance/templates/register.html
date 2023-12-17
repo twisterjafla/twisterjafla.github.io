@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+<link href="/static/styles.css" rel="stylesheet">
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form method="post" action="/register" >
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" placeholder = "username" name="username" value="{{ username }}">
+        </div>
+
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" placeholder = "password"  name="password" value="{{ password }}">
+        </div>
+
+        <div class="mb-3">
+            <input  class="form-control mx-auto w-auto" placeholder = "confirmation"  name="confirmation" value="{{ confirmation }}">
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <a href="/terms" target="_blank">By registering you agree to our terms of service!</a>
+{% endblock %}

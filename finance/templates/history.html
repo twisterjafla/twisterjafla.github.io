@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+<link href="/static/styles.css" rel="stylesheet">
+
+{% block main%}
+     <table class="table table-sriped">
+        <thead class = "center">
+            <tr>
+                <th>stock</th>
+                <th>amount of stock</th>
+                <th>date</th>
+                <th>hour</th>
+                <th>minute</th>
+                <th>amount of monney used</th>
+                <th>type of transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in history %}
+                <tr>
+                    <td>{{row.stock}}</tb>
+                    <td>{{row.count}}</tb>
+                    <td>{{row.date}}</tb>
+                    <td>{{row.hour}}</tb>
+                    <td>{{row.min}}</tb>
+                    <td>{{row.cost}}</tb>
+                    <td>{{row.type}}</tb>
+                </tr>
+                <div></div>
+            {%endfor%}
+        </tbody>
+    </table>
+{% endblock%}

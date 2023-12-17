@@ -1,0 +1,17 @@
+{% extends "layout.html"%}
+
+{% block main %}
+    <main style= "text-align:center">
+        <h2> Buy Stocks </h2>
+        <div >
+            <form method="post" action="/buy">
+                <div class = "mb-3">
+                    <input name = "symbol" class="form-control mx-auto w-auto" autofocus placeholder="symbol" value = "{{ symbol }}">
+                    <input name="shares" class="form-control mx-auto w-auto" autofocus placeholder = "shares" value="{{ shares }}">
+                </div>
+                <button class="btn btn-primary" type="submit">Buy</button>
+            </form>
+            </table>
+        </div>
+    </main>
+{% endblock%}

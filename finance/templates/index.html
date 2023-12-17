@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+<link href="/static/styles.css" rel="stylesheet">
+
+{% block main%}
+    <main style= "text-align:center">
+        <p class="center" > your total value is {{total}}</p>
+        <table class="table table-sriped">
+            <thead class = "center">
+                <tr>
+                    <th>Stock</th>
+                    <th>Amount</th>
+                    <th>Total value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{stock.stockCode}}</tb>
+                        <td>{{stock.count}}</tb>
+                        <td>{{stock.value}}</tb>
+                    </tr>
+                    <div></div>
+                {%endfor%}
+                <tr>
+                    <td>Floating cash</td>
+                    <td></td>
+                    <td>{{cash}}</td>
+                </tr>
+            </table>
+            </tbody>
+        </table>
+        <p> add cash to your acount </p>
+
+        <form method="post" action="/addCash">
+            <div class = "mb-3">
+                <input name="add" class="form-control mx-auto w-auto" autofocus placeholder = "amount to be added" value="{{ add }}">
+            </div>
+            <button class="btn btn-primary" type="submit">add</button>
+        </form>
+    </main>
+{% endblock%}
